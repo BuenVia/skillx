@@ -1,0 +1,31 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+<h1>Clients List</h1>
+
+<a href="{% url 'client_create' %}" class="btn btn-success">Create Client</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Client Name</th>
+      <th scope="col">Number of Persons</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for client in clients %}
+    <tr>
+      <td>{{ client.id }}</td>
+      <td><a href="{% url 'client_read' client.id %}"><strong>{{ client.client_name }}</strong></a></td>
+      <td>0</td>
+    </tr>
+    
+  {% endfor %}
+    
+  </tbody>
+</table>
+
+
+{% endblock %}

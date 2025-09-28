@@ -1,0 +1,14 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+<h1>Create User</h1>
+
+<form method="post" class="user__form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{% url 'user_list' %}" class="btn btn-primary">Back</a>
+  <button type="submit" class="btn btn-success">Create User</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+<h1>Users List</h1>
+
+<a href="{% url 'user_create' %}" class="btn btn-success">Create User</a>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th>Client</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for profile in profiles %}
+    <tr>
+      <td><a href="{% url 'user_read' profile.id %}">{{ profile.id }}</a></td>
+      <td>{{ profile.user.first_name }}</td>
+      <td>{{ profile.user.last_name }}</td>
+      <td>{{ profile.user.username }}</td>
+      <td>{{ profile.user.email }}</td>
+      <td>{{ profile.client.client_name }}</td>
+    </tr>
+    
+  {% endfor %}
+    
+  </tbody>
+</table>
+
+{% endblock %}

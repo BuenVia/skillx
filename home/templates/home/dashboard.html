@@ -1,0 +1,52 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+    <h2>Welcome to the Dashboard</h2>
+    <p>Hello, {{ request.user.username }}</p>
+
+    <div class="row align-items-start m-3">
+
+        <div class="col">
+            <!--Total CPDs + 3 month left + expired-->
+            <div class="card">
+                <div class="card-header">
+                    <p>Total CPDs: 
+                    </p>
+                </div>
+                <div class="card-body">
+                    <p>Total: {{ cpd_info | length }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <!--Upload-->
+            <div class="card">
+                <div class="card-header">
+                    Upload
+                </div>
+                <div class="card-body">
+                    <a href="{% url 'add_new' %}" class="btn btn-primary">Add New CPD</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row align-items-start m-3">
+        <!--List of CPDs-->
+        <div class="col">
+            <div class="card">
+                <div class="card-header">List of CPDs</div>
+                <div class="card-body">
+                    {% for cpd in cpd_info%}
+                    <p>
+                        {{ cpd.title }} - {{ cpd.date_start }}
+                    </p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

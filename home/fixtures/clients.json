@@ -1,0 +1,24 @@
+[
+  {
+    "model": "home.client",
+    "pk": 1,
+    "fields": {
+      "client_name": "Acme Corp"
+    }
+  },
+  {
+    "model": "home.client",
+    "pk": 2,
+    "fields": {
+      "client_name": "Buenvia"
+    }
+  }
+  ,
+  {
+    "model": "home.client",
+    "pk": 3,
+    "fields": {
+      "client_name": "Globex Inc"
+    }
+  }
+]

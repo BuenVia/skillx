@@ -1,0 +1,17 @@
+[
+  {
+    "model": "home.cpdinfo",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "title": "Intro to Google Cloud",
+        "provider": "Udemy",
+        "type_course": "Self-Study",
+        "description": "A elementary level introduction to Google Cloud.",
+        "date_start": "2025-09-25",
+        "date_complete": null,
+        "duration": "4.5",
+        "grade": "Pass"
+    }
+  }
+]

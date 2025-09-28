@@ -1,0 +1,21 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+
+<h1>Client Update</h1>
+
+<h1>Edit Client: {{ client.client_name }}</h1>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Save Changes</button>
+</form>
+
+<hr>
+
+<!-- Delete button -->
+<a href="{% url 'client_delete' client.id %}">Delete</a>
+
+{% endblock %}

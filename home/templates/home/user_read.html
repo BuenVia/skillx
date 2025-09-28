@@ -1,0 +1,21 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+<h1>User Read</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Join Date: {{ user.date_joined }}</p>
+        <p>Active: {{ user.is_active }}</p>
+        <p>Last Login: {{ user.last_login }}</p>
+    </div>
+    <div class="card-footer">
+        <p><a href="{% url 'user_list' %}" class="btn btn-primary">Back</a><a href="{% url 'user_update' user.id %}" class="btn btn-warning">Edit</a></p>
+    </div>
+</div>
+
+{% endblock %}

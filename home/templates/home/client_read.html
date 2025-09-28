@@ -1,0 +1,12 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+
+<h1>Client Read</h1>
+
+{{ client.client_name }}
+
+<p><a href="{% url 'client_update' client.id %}">Edit</a></p>
+
+{% endblock %}

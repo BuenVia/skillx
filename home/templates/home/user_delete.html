@@ -1,0 +1,16 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+
+<h1>User Delete</h1>
+
+<p>Are you sure you want to delete user "{{ user.username }}"?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" style="color: red;">Yes, Delete</button>
+  <a href="{% url 'user_update' user.id %}">Cancel</a>
+</form>
+
+{% endblock %}
