@@ -1,0 +1,27 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main__body {
+    margin: 1em 5em;
+}
+
+
+.user__form p {
+    display: flex;
+    flex-direction: column;
+}
+
+.user__form label {
+    font-weight: bold;
+}
+
+.user__form input, select {
+    width: 250px;
+    padding: .25em;
+    border-radius: 5px;
+    outline: none;
+}
+

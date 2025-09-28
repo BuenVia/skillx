@@ -1,7 +1,80 @@
-{% extends "home/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'home/index.css' %}">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <h1 class="logo">SkillX</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="{% url 'login' %}" class="btn">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-{% block content %}
-<h1>Home</h1>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h2>Learn. Develop. Progess.</h2>
+      <p>We help you to develop professionally.</p>
+      <a href="{% url 'login' %}" class="btn cta-btn">Login</a>
+    </div>
+  </section>
 
-<p><a href="{% url 'login' %}" class="btn btn-primary">Login</a></p>
-{% endblock %}
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container grid">
+      <div class="feature-card">
+        <h3>🚀 Learn</h3>
+        <p>Blurb about learning.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🔒 Develop</h3>
+        <p>Blurb about developing.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📈 Progress</h3>
+        <p>Blurb about progressing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container about-content">
+      <h2>Who We Are</h2>
+      <p>At SkillX, we’re passionate about continued professional development. Our mission is to help you organise, record and demonstrate your CPD so that you can show the world of work what you are worth.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container contact-content">
+      <h2>Get In Touch</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 NovaTech. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
